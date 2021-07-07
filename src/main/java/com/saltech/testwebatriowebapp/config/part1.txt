@@ -1,0 +1,16 @@
+1) Requête xpath pour retourner tous les éléments book
+
+ /library/book::*
+
+2) Retourner tous les éléments title ayant comme parent un élément book avec un attribut type égal à roman
+
+/library/book[@type = "roman" ]
+
+3)  Retourner le nombre d'éléments book ayant un attribut type égal à bd
+/library/book[count(@type ="bd")]
+
+4) Que renvoie la requête XPath suivante : /library/library/ancestor-or-self::library
+<book type="roman">
+    <title> toto5 </title>
+   <author>titi</author>
+</book>
