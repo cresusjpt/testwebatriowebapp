@@ -61,13 +61,15 @@
             <div class="form-group">
                 <label for="born">Date de naissance</label>
                 <input type="date" th:field="*{dateNaissance}" class="form-control" id="born"
-                       min="1997-01-01" max="2030-12-31"
+                       min="1800-01-01" max="2030-12-31"
                        aria-describedby="lastNameHelp" placeholder="Date de naissance de la personne">
                 <small id="bornHelp" class="form-text text-muted">Choisir la date de naissance.</small>
             </div>
 
             <button type="submit" class="btn btn-primary">Créer</button>
         </form>
+
+        <h4><a th:href="@{/}">Visualiser</a></h4>
     </div>
 
 </div>

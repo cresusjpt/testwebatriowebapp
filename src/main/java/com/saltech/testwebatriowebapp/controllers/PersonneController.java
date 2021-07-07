@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+
 @Controller
 public class PersonneController {
 
@@ -33,7 +34,7 @@ public class PersonneController {
     }
 
     @PostMapping("/savePersonne")
-    public ModelAndView savePersonne(@ModelAttribute Personne personne) {
+    public ModelAndView savePersonne(@ModelAttribute Personne personne) throws Exception {
         if(personne.getId() != null) {
             //not handling update personne
         }

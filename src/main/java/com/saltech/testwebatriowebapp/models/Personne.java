@@ -1,5 +1,11 @@
 package com.saltech.testwebatriowebapp.models;
 
+import org.apache.tomcat.jni.Local;
+
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+
 public class Personne {
 
     private Integer id;
@@ -51,4 +57,24 @@ public class Personne {
     public void setAge(int age) {
         this.age = age;
     }
+
+    public int calculateAge(LocalDate currentDate) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
+
+        //solution a chaud peut être améliorée
+        if (dateNaissance.split(" ").length != 2)
+            dateNaissance+=" 00:00:00";
+
+
+        //convert String to LocalDate
+        LocalDate birthDate = LocalDate.parse(dateNaissance, formatter);
+        if ((birthDate != null) && (currentDate != null)) {
+            this.age = Period.between(birthDate, currentDate).getYears();
+            return Period.between(birthDate, currentDate).getYears();
+        } else {
+            this.age = 0;
+            return 0;
+        }
+    }
+
 }
